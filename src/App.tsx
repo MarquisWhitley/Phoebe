@@ -22,7 +22,7 @@ const App = () => {
       </div>
       <h1>Vite + {name}</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => ++count)}>
+        <button onClick={() => setCount((count) => count += 1)}>
           count is {count}, {name}
         </button>
         <p>
