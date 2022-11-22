@@ -2,11 +2,11 @@ import axios from "axios";
 import { AuthAction } from "../actions/authActions";
 import { AuthActionType } from "../action-types/authActionTypes";
 import { Dispatch } from "redux";
-import setAuthToken from "../../utils/setAuthToken";
+import setAxiosAuthToken from "../../utils/setAxiosAuthToken";
 
 export const loadUser = () => async (dispatch: Dispatch<AuthAction>) => {
    if (localStorage.token) {
-      setAuthToken(localStorage.token);
+      setAxiosAuthToken(localStorage.token);
    }
 
    try {

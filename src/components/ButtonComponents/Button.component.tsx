@@ -2,22 +2,23 @@ import React from "react";
 import { ButtonSizes } from "./ButtonSizes";
 import { ButtonStyles } from "./ButtonStyles";
 
-interface ButtonProps {
-   action: Function;
+export interface ButtonProps {
+   action: () => void;
    btnSize: ButtonSizes;
    btnStyle: ButtonStyles;
    disabled: boolean;
-   children: string
+   children: string;
 }
 
-const Button = ({ action, btnSize, btnStyle, disabled, children }: ButtonProps) => {
+const Button = (btnProps: ButtonProps) => {
+   const { action, btnSize, btnStyle, disabled, children } = btnProps;
    return (
       <button
          className={`${btnSize} ${btnStyle}`}
          disabled={disabled}
          onClick={() => action()}
       >
-        {children}
+         {children}
       </button>
    );
 };
