@@ -102,6 +102,10 @@ const useSignIn = () => {
       onError: (error: any, variables, context) => {
           errorHandler(error.response.data);
       },
+      onSuccess: (data, variables, context) => {
+          console.log(data.data.tokens);
+          localStorage.setItem('token', data.data.tokens.access.token)
+      },
    });
 
    const signInUser = () => {

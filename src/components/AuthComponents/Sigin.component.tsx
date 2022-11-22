@@ -8,6 +8,7 @@ import "./AuthComponentsStyling/Signin.scss";
 import {useSignIn, useRegistration} from "./AuthHooks";
 import Spinner from 'react-bootstrap/Spinner';
 import 'bootstrap/dist/css/bootstrap.css';
+import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
    const { signIn, signInResponse, signInStatus, signInVals, inputChange, signInError, signInErrorMessage } =
@@ -35,6 +36,18 @@ const Signin = () => {
       action: () => signIn(),
       children: "Sign In",
    };
+
+   let navigate = useNavigate();
+   const continueBtn: ButtonProps = {
+      btnSize: ButtonSizes.SMALL,
+      btnStyle: ButtonStyles.PRIMARY,
+      disabled: false,
+      action: () => {
+         console.log("Navigating");
+        navigate("/");
+      },
+      children: "Continue"
+   }
    useEffect(() => {
       console.log(signInVals);
    },[signInVals])
@@ -44,6 +57,7 @@ const Signin = () => {
       {signInStatus == "success" ? <>
       <div>
          <span>Welcome, {signInResponse?.user.firstName}</span>
+         <Button {...continueBtn} />
       </div>
       </> : <>
                <h1>Hi Guys!</h1>
