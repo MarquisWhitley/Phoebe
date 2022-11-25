@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto+Condensed&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
+  //  font-family: "Dancing Script", cursive;
+  //  font-family: "Roboto", sans-serif;
+  //  font-family: "Roboto Condensed", sans-serif;
 }
 
 .logo {
@@ -14,4 +20,6 @@
 .card {
   padding: 2em;
 }
-
+input {
+  border: 1px solid black;
+}
