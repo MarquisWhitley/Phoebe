@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'PhoebeApp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_64A1AF8DBE364B4D8506492ECBE191E7 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_377EC698A8424EAC994D46D9FBC2E233 }}
           package: .
